@@ -18,6 +18,7 @@
 /*  функция распределения времени cubic-bezier(0.4, 0, 0.2, 1)*/
 /* цвет backdrop rgba(0, 0, 0, 0.2) */
 /* цвет кнопки закрытия модалки rgba(0, 0, 0, 0.1)*/
+/* цвет тени кнопки подписаться rgba(0, 0, 0, 0.15)*/
 :root {
   --header-color: #212121;
   --p-color: #757575;
@@ -34,10 +35,11 @@
   --color-background-icon-footer: rgba(255, 255, 255, 0.1);
   --color-background-fone-examples: rgba(47, 48, 58, 0.8);
   --overlay-portfolio: rgba(33, 150, 243, 0.9);
-  --time-hover: 250ms;
+  --time-hover: 2050ms;
   --function-time: cubic-bezier(0.4, 0, 0.2, 1);
   --color-backdrop: rgba(0, 0, 0, 0.2);
   --close-modal: rgba(0, 0, 0, 0.1);
+  --color-shadow-submit: rgba(0, 0, 0, 0.15);
 }
 body {
   color: var(--header-color);
@@ -560,7 +562,7 @@ footer .logo {
   margin-top: 72px;
   margin-left: 70px;
 }
-.footer-social {
+.footer-headlines {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.17;
@@ -600,7 +602,62 @@ footer .logo {
 }
 
 /* */
+/* стилизация секции подписки*/
+.container-subscription {
+  margin-top: 83px;
+  margin-left: 93px;
+}
+.form-subscription {
+  display: flex;
+}
+.form-subscription input {
+  width: 358px;
+  padding: 15px 16px;
+  margin-right: 12px;
 
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+.form-subscription input::placeholder {
+  /*font-weight: 400;*/
+  /*font-size: 16px;*/
+  /* line-height: 1.25;*/
+  /* identical to box height, or 125% */
+}
+
+/*  кнопка подписки*/
+.button-subsription {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  width: 200px;
+  padding: 10px 28px;
+
+  background: var(--accent-color);
+  color: var(--h1-footer-color);
+  fill: var(--h1-footer-color);
+
+  border-radius: 4px;
+  border-width: 0;
+
+  cursor: pointer;
+  transition: box-shadow var(--time-hove) var(--function-time);
+}
+
+.button-subsription span {
+  margin-right: 10px;
+  font-weight: 700;
+  /* font-size: 16px;*/
+  line-height: 1.88;
+  /* identical to box height, or 188% */
+  letter-spacing: 0.06em;
+}
+.button-subsription:hover,
+.button-subsription:focus {
+  box-shadow: 0px 4px 4px var(--color-shadow-submit);
+}
+/* */
 /*  стилизация кнопок портфолио */
 .button-portfolio {
   color: var(--header-color);
