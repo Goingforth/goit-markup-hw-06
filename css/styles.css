@@ -759,6 +759,7 @@ footer .logo {
     opacity var(--time-hover) var(--function-time);
 }
 .modal-button {
+  display: flex;
   position: absolute;
   top: 8px;
   right: 8px;
@@ -767,17 +768,23 @@ footer .logo {
 
   border-radius: 15px;
 
-  text-align: center;
-
-  /*font-size: 18px;
-  color: #000;*/
-
   border: 1px solid var(--close-modal);
   background-color: var(--h1-footer-color);
 
   cursor: pointer;
   fill: var(--logo-black-color);
 }
+.close-modal {
+  margin: auto;
+
+  transition: fill var(--time-hover) var(--function-time);
+}
+
+.modal-button:hover,
+.modal-button:focus {
+  fill: var(--accent-color);
+}
+
 .form-field {
   position: relative;
 
@@ -826,11 +833,19 @@ footer .logo {
   color: var(--p-color);
 }
 .form-field input {
-  position: relative;
   padding: 11px 12px 11px 42px;
 
   border: 1px solid var(--color-border-inpur-modal);
   border-radius: 4px;
+
+  transition: border var(--time-hover) var(--function-time);
+}
+.form-field input:hover,
+.form-field input:focus {
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+
+  cursor: pointer;
 }
 
 .modal-icon {
@@ -843,7 +858,14 @@ footer .logo {
   height: 18px;
   margin-right: 12px;
 
-  outline: 1px solid red;
-  background-color: red;
+  fill: var(--header-color);
+
+  transition: fill var(--time-hover) var(--function-time);
 }
+
+.form-field input:hover + .modal-icon,
+.form-field input:focus + .modal-icon {
+  fill: var(--accent-color);
+}
+
 /*  end Модальное окно  */
