@@ -779,6 +779,8 @@ footer .logo {
   fill: var(--logo-black-color);
 }
 .form-field {
+  position: relative;
+
   display: flex;
   margin-bottom: 10px;
   flex-direction: column;
@@ -824,10 +826,24 @@ footer .logo {
   color: var(--p-color);
 }
 .form-field input {
-  padding: 11px 12px;
+  position: relative;
+  padding: 11px 12px 11px 42px;
 
   border: 1px solid var(--color-border-inpur-modal);
   border-radius: 4px;
 }
 
+.modal-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+  display: inline-block;
+
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+
+  outline: 1px solid red;
+  background-color: red;
+}
 /*  end Модальное окно  */
