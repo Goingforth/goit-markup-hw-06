@@ -925,7 +925,16 @@ footer .logo {
   background-color: var(--color-button-press-modal);
   cursor: pointer;
 }
-
 /* */
+/* кастомный чекбокс*/
 
+.checkbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  background-color: red;
+}
+.checkbox:checked + .checkbox-icon {
+  background-color: green;
+}
 /*  end Модальное окно  */
