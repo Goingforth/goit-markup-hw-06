@@ -20,6 +20,7 @@
 /* цвет кнопки закрытия модалки rgba(0, 0, 0, 0.1)*/
 /* цвет тени кнопки подписаться rgba(0, 0, 0, 0.15)*/
 /* цвет рамки input и comment  rgba(33, 33, 33, 0.2)*/
+/* цвет кнопки submit при ховере #188ce8*/
 :root {
   --header-color: #212121;
   --p-color: #757575;
@@ -42,6 +43,7 @@
   --close-modal: rgba(0, 0, 0, 0.1);
   --color-shadow-submit: rgba(0, 0, 0, 0.15);
   --color-border-inpur-modal: rgba(33, 33, 33, 0.2);
+  --color-button-press-modal: #188ce8;
 }
 body {
   color: var(--header-color);
@@ -758,7 +760,7 @@ footer .logo {
   transition: transform var(--time-hover) var(--function-time),
     opacity var(--time-hover) var(--function-time);
 }
-.modal-button {
+.modal-button-close {
   display: flex;
   position: absolute;
   top: 8px;
@@ -780,8 +782,8 @@ footer .logo {
   transition: fill var(--time-hover) var(--function-time);
 }
 
-.modal-button:hover,
-.modal-button:focus {
+.modal-button-close:hover,
+.modal-button-close:focus {
   fill: var(--accent-color);
 }
 
@@ -831,7 +833,18 @@ footer .logo {
   letter-spacing: 0.01em;
 
   color: var(--p-color);
+  transition: color var(--time-hover) var(--function-time);
 }
+.comment:hover,
+.comment:focus {
+  border: 1px solid var(--accent-color);
+  transition: border var(--time-hover) var(--function-time);
+}
+.comment:hover::placeholder,
+.comment:focus::placeholder {
+  color: var(--accent-color);
+}
+
 .form-field input {
   padding: 11px 12px 11px 42px;
 
@@ -867,5 +880,52 @@ footer .logo {
 .form-field input:focus + .modal-icon {
   fill: var(--accent-color);
 }
+.form-policy {
+  margin-bottom: 30px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  /* identical to box height, or 171% */
+
+  letter-spacing: 0.03em;
+
+  color: var(--p-color);
+}
+.link-policy {
+  color: var(--accent-color);
+}
+/* кнопка */
+.modal-button-submit button {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+
+  margin: 0 auto;
+  display: block;
+  border-width: 0;
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  /* identical to box height, or 188% */
+  text-align: center;
+  letter-spacing: 0.06em;
+
+  color: var(--h1-footer-color);
+
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px var(--color-shadow-submit);
+
+  transition: background-color var(--time-hover) var(--function-time);
+}
+.modal-button-submit button:hover,
+.modal-button-submit button:focus {
+  background-color: var(--color-button-press-modal);
+  cursor: pointer;
+}
+
+/* */
 
 /*  end Модальное окно  */
