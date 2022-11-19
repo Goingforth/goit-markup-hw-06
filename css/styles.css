@@ -19,6 +19,7 @@
 /* цвет backdrop rgba(0, 0, 0, 0.2) */
 /* цвет кнопки закрытия модалки rgba(0, 0, 0, 0.1)*/
 /* цвет тени кнопки подписаться rgba(0, 0, 0, 0.15)*/
+/* цвет рамки input и comment  rgba(33, 33, 33, 0.2)*/
 :root {
   --header-color: #212121;
   --p-color: #757575;
@@ -40,6 +41,7 @@
   --color-backdrop: rgba(0, 0, 0, 0.2);
   --close-modal: rgba(0, 0, 0, 0.1);
   --color-shadow-submit: rgba(0, 0, 0, 0.15);
+  --color-border-inpur-modal: rgba(33, 33, 33, 0.2);
 }
 body {
   color: var(--header-color);
@@ -618,12 +620,6 @@ footer .logo {
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
 }
-.form-subscription input::placeholder {
-  /*font-weight: 400;*/
-  /*font-size: 16px;*/
-  /* line-height: 1.25;*/
-  /* identical to box height, or 125% */
-}
 
 /*  кнопка подписки*/
 .button-subsription {
@@ -736,12 +732,14 @@ footer .logo {
 }
 .backdrop.is-hidden {
   opacity: 0;
+  /*opacity: 1; /*  временно*/
   pointer-events: none;
 }
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.9);
   opacity: 0;
+  /*opacity: 1; /*  временно*/
 }
 .modal {
   position: absolute;
@@ -750,6 +748,7 @@ footer .logo {
 
   width: 528px;
   height: 581px;
+  padding: 40px;
   background-color: var(--h1-footer-color);
 
   transform: translate(-50%, -50%) scale(1);
@@ -770,12 +769,65 @@ footer .logo {
 
   text-align: center;
 
-  font-size: 18px;
-  color: #000;
+  /*font-size: 18px;
+  color: #000;*/
 
   border: 1px solid var(--close-modal);
   background-color: var(--h1-footer-color);
 
   cursor: pointer;
+  fill: var(--logo-black-color);
 }
+.form-field {
+  display: flex;
+  margin-bottom: 10px;
+  flex-direction: column;
+}
+.modal-header {
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: var(--header-color);
+}
+.form-field label {
+  margin-bottom: 4px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  /* identical to box height */
+
+  letter-spacing: 0.01em;
+
+  color: var(--p-color);
+}
+.comment {
+  height: 120px;
+  resize: none;
+  padding: 12px;
+  margin-bottom: 20px;
+
+  border: 1px solid var(--color-border-inpur-modal);
+  border-radius: 4px;
+}
+.comment::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  /* identical to box height */
+
+  letter-spacing: 0.01em;
+
+  color: var(--p-color);
+}
+.form-field input {
+  padding: 11px 12px;
+
+  border: 1px solid var(--color-border-inpur-modal);
+  border-radius: 4px;
+}
+
 /*  end Модальное окно  */
