@@ -939,13 +939,15 @@ footer .logo {
   border: 2px solid var(--header-color);
   border-radius: 2px;
 }
+.checkbox-icon:hover,
+.checkbox-icon:focus {
+  cursor: pointer;
+}
 
 .checkbox:checked + .checkbox-icon {
   background-color: var(--accent-color);
   border: 0;
   background-image: url(../images/icon-check.svg);
-
-  cursor: pointer;
 }
 .label-policy {
   display: flex;
