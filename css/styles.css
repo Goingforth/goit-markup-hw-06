@@ -621,6 +621,7 @@ footer .logo {
 
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
+  background-color: var(--background-color-footer);
 }
 
 /*  кнопка подписки*/
@@ -838,6 +839,8 @@ footer .logo {
 .comment:focus {
   border: 1px solid var(--accent-color);
   transition: border var(--time-hover) var(--function-time);
+
+  outline: 0;
 }
 .comment:hover::placeholder,
 .comment:focus::placeholder {
@@ -858,6 +861,7 @@ footer .logo {
   border-radius: 4px;
 
   cursor: pointer;
+  outline: 0;
 }
 
 .modal-icon {
@@ -935,10 +939,13 @@ footer .logo {
   border: 2px solid var(--header-color);
   border-radius: 2px;
 }
+
 .checkbox:checked + .checkbox-icon {
   background-color: var(--accent-color);
   border: 0;
   background-image: url(../images/icon-check.svg);
+
+  cursor: pointer;
 }
 .label-policy {
   display: flex;
